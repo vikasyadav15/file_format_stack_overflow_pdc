@@ -1,0 +1,75 @@
+use stackoverflow;
+drop table if exists  Badges_avro;
+CREATE EXTERNAL TABLE IF NOT EXISTS  Badges_avro
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe'
+STORED AS INPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat'
+OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat'
+LOCATION '/benchmark_file_format/stackoverflow/avrodatafile/Badges/'
+TBLPROPERTIES
+('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/Badges.avsc');
+
+drop table if exists  Comments_avro;
+CREATE EXTERNAL TABLE IF NOT EXISTS  Comments_avro
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe'
+STORED AS INPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat'
+OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat'
+LOCATION '/benchmark_file_format/stackoverflow/avrodatafile/Comments/'
+TBLPROPERTIES
+('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/Comments.avsc');
+
+
+drop table if exists  PostHistory_avro;
+CREATE EXTERNAL TABLE IF NOT EXISTS  PostHistory_avro
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe'
+STORED AS INPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat'
+OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat'
+LOCATION '/benchmark_file_format/stackoverflow/avrodatafile/PostHistory/'
+TBLPROPERTIES
+('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/PostHistory.avsc');
+
+drop table if exists  PostLinks_avro;
+CREATE EXTERNAL TABLE IF NOT EXISTS  PostLinks_avro
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe'
+STORED AS INPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat'
+OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat'
+LOCATION '/benchmark_file_format/stackoverflow/avrodatafile/PostLinks/'
+TBLPROPERTIES
+('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/PostLinks.avsc');
+
+drop table if exists  Tags_avro;
+CREATE EXTERNAL TABLE IF NOT EXISTS  Tags_avro
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe'
+STORED AS INPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat'
+OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat'
+LOCATION '/benchmark_file_format/stackoverflow/avrodatafile/Tags/'
+TBLPROPERTIES
+('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/Tags.avsc');
+
+drop table if exists  Users_avro;
+drop table if exists Users_avro;
+CREATE EXTERNAL TABLE IF NOT EXISTS  Users_avro
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe'
+STORED AS INPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat'
+OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat'
+LOCATION '/benchmark_file_format/stackoverflow/avrodatafile/Users/'
+TBLPROPERTIES
+('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/Users.avsc');
+
+drop table if exists  Votes_avro;
+CREATE EXTERNAL TABLE IF NOT EXISTS  Votes_avro
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe'
+STORED AS INPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat'
+OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat'
+LOCATION '/benchmark_file_format/stackoverflow/avrodatafile/Votes/'
+TBLPROPERTIES
+('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/Votes.avsc');
+
+drop table if exists  Posts_avro;
+CREATE EXTERNAL TABLE IF NOT EXISTS  Posts_avro
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe'
+STORED AS INPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat'
+OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat'
+LOCATION '/benchmark_file_format/stackoverflow/avrodatafile/Posts/'
+TBLPROPERTIES
+('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/Posts.avsc');
+

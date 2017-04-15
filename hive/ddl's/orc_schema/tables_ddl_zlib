@@ -1,0 +1,118 @@
+CREATE TABLE `badges_orc`(
+  `id` int,
+  `userid` int,
+  `name` varchar(50),
+  `date` string,
+  `class` int,
+  `tagbased` boolean)
+STORED AS ORC
+LOCATION
+  '/user/hive/warehouse/stackoverflow.db/badges_orc';
+
+
+
+CREATE TABLE `comments_orc`(
+  `id` int,
+  `postid` int,
+  `score` int,
+  `text` string,
+  `creationdate` string,
+  `userdisplayname` varchar(30),
+  `userid` int)
+STORED AS ORC
+LOCATION
+  '/user/hive/warehouse/stackoverflow.db/comments_orc';
+
+CREATE TABLE `posthistory_orc`(
+  `id` int,
+  `posthistorytypeid` int,
+  `postid` int,
+  `revisionguid` varchar(36),
+  `creationdate` string,
+  `userid` int,
+  `userdisplayname` varchar(40),
+  `comment` varchar(400),
+  `text` string)
+STORED AS ORC
+LOCATION
+  '/user/hive/warehouse/stackoverflow.db/posthistory_orc';
+
+CREATE TABLE `postlinks_orc`(
+  `id` int,
+  `creationdate` string,
+  `postid` int,
+  `relatedpostid` int,
+  `linktypeid` int)
+STORED AS ORC
+LOCATION
+  '/user/hive/warehouse/stackoverflow.db/postlinks_orc';
+
+CREATE TABLE `posts_orc`(
+  `id` int,
+  `posttypeid` int,
+  `acceptedanswerid` int,
+  `parentid` int,
+  `creationdate` string,
+  `deletiondate` string,
+  `score` int,
+  `viewcount` int,
+  `body` string,
+  `owneruserid` int,
+  `ownerdisplayname` varchar(256),
+  `lasteditoruserid` int,
+  `lasteditordisplayname` varchar(40),
+  `lasteditdate` string,
+  `lastactivitydate` string,
+  `title` varchar(256),
+  `tags` varchar(256),
+  `answercount` int,
+  `commentcount` int,
+  `favoritecount` int,
+  `closeddate` string,
+  `communityowneddate` string)
+STORED AS ORC
+LOCATION
+  '/user/hive/warehouse/stackoverflow.db/posts_orc';
+
+CREATE TABLE `tags_orc`(
+  `id` int,
+  `tagname` varchar(50),
+  `count` int,
+  `excerptpostid` int,
+  `wikipostid` int)
+STORED AS ORC
+LOCATION
+  '/user/hive/warehouse/stackoverflow.db/tags_orc';
+
+CREATE TABLE `users_orc`(
+  `id` int,
+  `reputation` int,
+  `creationdate` string,
+  `displayname` varchar(40),
+  `lastaccessdate` string,
+  `websiteurl` varchar(256),
+  `location` varchar(256),
+  `aboutme` string,
+  `views` int,
+  `upvotes` int,
+  `downvotes` int,
+  `profileimageurl` varchar(200),
+  `age` int,
+  `accountid` int)
+STORED AS ORC
+LOCATION
+  '/user/hive/warehouse/stackoverflow.db/users_orc';
+
+
+CREATE TABLE `votes_orc`(
+  `id` int,
+  `postid` int,
+  `votetypeid` int,
+  `userid` int,
+  `creationdate` string,
+  `bountyamount` int)
+STORED AS ORC
+LOCATION
+  '/user/hive/warehouse/stackoverflow.db/votes_orc';
+
+

@@ -1,0 +1,42 @@
+use stackoverflow;
+drop table if exists Badges_parquet;
+CREATE TABLE Badges_avro1  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe' STORED AS AVRO TBLPROPERTIES ('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/Badges.avsc');
+CREATE EXTERNAL TABLE Badges_parquet  LIKE Badges_avro1 STORED AS PARQUET LOCATION '/benchmark_file_format/stackoverflow/Parquet/Badges';
+drop table Badges_avro1 ;
+
+drop table if exists Comments_parquet;
+CREATE TABLE Comments_avro1  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe' STORED AS AVRO TBLPROPERTIES ('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/Comments.avsc');
+CREATE EXTERNAL TABLE Comments_parquet  LIKE Comments_avro1 STORED AS PARQUET LOCATION '/benchmark_file_format/stackoverflow/Parquet/Comments';
+drop table Comments_avro1 ;
+
+drop table if exists PostHistory_parquet;
+CREATE TABLE PostHistory_avro1  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe' STORED AS AVRO TBLPROPERTIES ('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/PostHistory.avsc');
+CREATE EXTERNAL TABLE PostHistory_parquet  LIKE PostHistory_avro1 STORED AS PARQUET LOCATION '/benchmark_file_format/stackoverflow/Parquet/PostHistory';
+drop table PostHistory_avro1 ;
+
+drop table if exists Posts_parquet;
+CREATE TABLE Posts_avro1  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe' STORED AS AVRO TBLPROPERTIES ('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/Posts.avsc');
+CREATE EXTERNAL TABLE Posts_parquet  LIKE Posts_avro1 STORED AS PARQUET LOCATION '/benchmark_file_format/stackoverflow/Parquet/Posts';
+drop table Posts_avro1 ;
+
+
+drop table if exists PostLinks_parquet;
+CREATE TABLE PostLinks_avro1  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe' STORED AS AVRO TBLPROPERTIES ('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/PostLinks.avsc');
+CREATE EXTERNAL TABLE PostLinks_parquet  LIKE PostLinks_avro1 STORED AS PARQUET LOCATION '/benchmark_file_format/stackoverflow/Parquet/PostLinks';
+drop table PostLinks_avro1 ;
+
+drop table if exists Tags_parquet;
+CREATE TABLE Tags_avro1  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe' STORED AS AVRO TBLPROPERTIES ('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/Tags.avsc');
+CREATE EXTERNAL TABLE Tags_parquet  LIKE Tags_avro1 STORED AS PARQUET LOCATION '/benchmark_file_format/stackoverflow/Parquet/Tags';
+drop table Tags_avro1 ;
+
+drop table if exists Users_parquet;
+CREATE TABLE Users_avro1  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe' STORED AS AVRO TBLPROPERTIES ('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/Users.avsc');
+CREATE EXTERNAL TABLE Users_parquet  LIKE Users_avro1 STORED AS PARQUET LOCATION '/benchmark_file_format/stackoverflow/Parquet/Users';
+drop table Users_avro1 ;
+
+drop table if exists Votes_parquet;
+CREATE TABLE Votes_avro1  ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.avro.AvroSerDe' STORED AS AVRO TBLPROPERTIES ('avro.schema.url'='/benchmark_file_format/stackoverflow/avro_schema/Votes.avsc');
+CREATE EXTERNAL TABLE Votes_parquet  LIKE Votes_avro1 STORED AS PARQUET LOCATION '/benchmark_file_format/stackoverflow/Parquet/Votes';
+drop table Votes_avro1 ;
+
